@@ -5,6 +5,7 @@
   padding: 0;
   margin: 0;
 }
+
 body{
     min-height: 100vh;
     display: flex;
@@ -13,23 +14,27 @@ body{
     width: 100%;
     align-items: center;
     background-color: hsl(185, 41%, 84%);
+    font-family: 'Space Mono', monospace;
 }
 .main {
     display: flex;
-    padding: 2em;
-    width: 85%;
+    padding: 1em;
+    width: 75%;
     height: 50vh;
     justify-content: space-between;
     background-color: hsl(0, 0%, 100%);
+    border-radius: 1em;
+    max-width: 610px;
 }
 
 .display {
-    width: 45%;
+    width: 48%;
     background-color: hsl(183, 100%, 15%);
     display: grid;
     grid-template-rows: repeat(5,1fr);
     row-gap: 4px;
     padding: 1em;
+    border-radius: 0.5em;
 }
 
 .tip-amount {
@@ -44,11 +49,19 @@ body{
 .reset {
     grid-row-start: -2;
     grid-row-end: -1;
-    background-color: hsl(186, 14%, 43%);
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    font-weight: 700;
+}
+
+
+
+.reset:hover {
+    background-color: hsl(185, 41%, 84%) ;
 }
 
 .control {
-    width: 45%;
+    width: 48%;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     row-gap: 4px;
@@ -63,6 +76,20 @@ body{
     grid-row-end: 4;
 }
 
+input {
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 3px;
+    background-color: hsl(189, 41%, 97%);
+    text-align: right;
+    padding: 10px;
+    color:hsl(183, 100%, 15%);
+    font-weight: 700;
+    font-family: inherit;
+}
+
 .tips {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -74,12 +101,62 @@ body{
 
 .tip {
     width: 100%;
-    height: 25px;
+    height: 30px;
+    color: hsl(0, 0%, 100%);
 }
+
+button.tip:hover {
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+}
+
+button.tip:focus {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
 
 #no-of-people {
     width: 100%;
 }
 button {
     border: none;
+    border-radius: 0.2em;
+    cursor: pointer;
+}
+button:active {
+    transform: translateY(2px);
+}
+
+input:focus {
+    border: 2px solid hsl(185,36%,61%);
+}
+button.tip {
+    background-color: hsl(183, 100%, 15%);
+    font-weight: 700;
+    font-family: inherit;
+    transition: background-color 0.1s ease-in;
+}
+
+.tip-amount-display, .total-display {
+    font-size: 25px;
+    font-weight: 700;
+    color:  hsl(172, 67%, 45%)
+}
+
+.label {
+    font-size: x-small;
+    color: hsl(186, 14%, 43%);
+    font-weight: 700;
+}
+
+.person {
+    color: hsl(184, 14%, 56%); 
+    font-size: x-small;
+    font-weight: 700;
+}
+
+/* not able to display svgs inside input box */
+#input-amount:before {
+    content: url('icon-dollar.svg');
 }

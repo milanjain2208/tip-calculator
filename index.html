@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="index.js"></script>
   <title>Frontend Mentor | Tip calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -25,7 +26,10 @@
   <div class="main">
     <div class="control">
       <div>
-        <div class="label">Bill</div>
+        <div class="label bill">
+          <div>Bill</div>
+          <div class="error number-error hide">Enter a number!</div>
+        </div>
         <span class="dollar-container"></span>
         <input type="text" id="input-amount" placeholder="0">
       </div>
@@ -41,7 +45,10 @@
         </div>
       </div>
       <div>
-        <div class="label">Number of People</div>
+        <div class="label no-of-people">
+          <div>Number of People</div>
+          <div class="error no-of-people-error hide"></div>
+        </div>
         <span class="person-container"></span>
         <input type="text" id="no-of-people" placeholder="0">
       </div>
